@@ -22,7 +22,7 @@ public class TecnicoDTO implements Serializable {
 	@NotNull(message = "O campo NOME é requirido")
 	protected String nome;
 	@NotNull(message = "O campo CPF é requirido")
-	@CPF(message = "O CPF digitado é inválido.")
+	@CPF
 	protected String cpf;
 	@NotNull(message = "O campo E-MAIL é requirido")
 	protected String email;
@@ -81,6 +81,14 @@ public class TecnicoDTO implements Serializable {
 		this.email = email;
 	}
 
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	public Set<Perfil> getPerfis() {
 		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
 	}
@@ -97,12 +105,4 @@ public class TecnicoDTO implements Serializable {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-	
 }
