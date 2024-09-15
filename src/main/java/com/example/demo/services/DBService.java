@@ -31,21 +31,21 @@ public class DBService {
 	
 	public void instanciaDB() {
 		
-		Tecnico tec1 = new Tecnico(null, "Dennis Henrique", "32326811070", "testedennis@teste.com", encoder.encode("123"));
+		Tecnico tec1 = new Tecnico(null, "Dennis Henrique", "323.268.110-70", "testedennis@teste.com", encoder.encode("123"));
 		tec1.addPerfil(Perfil.ADMIN);
 		
-		Tecnico tec2 = new Tecnico(null, "Bernard Mendes", "65953162006", "testebernard@teste.com", encoder.encode("123"));
+		Tecnico tec2 = new Tecnico(null, "Bernard Mendes", "659.531.620-06", "testebernard@teste.com", encoder.encode("123"));
 		tec2.addPerfil(Perfil.TECNICO);
 		
-		Tecnico tec3 = new Tecnico(null, "Saulo Carneiro", "92529110069", "testesaulo@teste.com", encoder.encode("123"));
+		Tecnico tec3 = new Tecnico(null, "Saulo Carneiro", "925.291.100-69", "testesaulo@teste.com", encoder.encode("123"));
 		tec3.addPerfil(Perfil.TECNICO);
 		
-		Tecnico tec4 = new Tecnico(null, "Bilé Palilo", "87325245017", "testebile@teste.com", encoder.encode("123"));
+		Tecnico tec4 = new Tecnico(null, "Bilé Palilo", "873.252.450-17", "testebile@teste.com", encoder.encode("123"));
 		tec4.addPerfil(Perfil.ADMIN);
 		
-		Cliente cli1 = new Cliente(null, "Paula Ferreira", "01234567890", "testepaula@hotmail.com", encoder.encode("123"));
-		Cliente cli2 = new Cliente(null, "Micalateia Alice", "08568773010", "testemicalateia@hotmail.com", encoder.encode("123"));
-		Cliente cli3 = new Cliente(null, "Cleide Augênia", "52270765028", "testecliede@hotmail.com", encoder.encode("123"));
+		Cliente cli1 = new Cliente(null, "Paula Ferreira", "012.345.678-90", "testepaula@hotmail.com", encoder.encode("123"));
+		Cliente cli2 = new Cliente(null, "Micalateia Alice", "085.687.730-10", "testemicalateia@hotmail.com", encoder.encode("123"));
+		Cliente cli3 = new Cliente(null, "Cleide Augênia", "522.707.650-28", "testecliede@hotmail.com", encoder.encode("123"));
 		
 		Chamado cha1 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "Chamado 01", "Primeiro chamado", tec1, cli1);
 		Chamado cha2 = new Chamado(null, Prioridade.BAIXA, Status.ABERTO, "Chamado 02", "Segundo chamado", tec2, cli2);

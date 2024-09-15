@@ -38,8 +38,8 @@ public class TecnicoService {
 	public List<Tecnico> findAll() {
 		return repository.findAll();
 	}
-	
-	public Tecnico create(@RequestBody TecnicoDTO objDTO){
+
+	public Tecnico create(TecnicoDTO objDTO) {
 		objDTO.setId(null);
 		objDTO.setSenha(encoder.encode(objDTO.getSenha()));
 		validaPorCpfEEmail(objDTO);
@@ -50,8 +50,11 @@ public class TecnicoService {
 	
 	public Tecnico update(Integer id, @Valid TecnicoDTO objDTO) {
 		objDTO.setId(id);
-		objDTO.setSenha(encoder.encode(objDTO.getSenha()));
 		Tecnico oldObj = findById(id);
+		
+		if(!objDTO.getSenha().equals(oldObj.getSenha())) 
+			objDTO.setSenha(encoder.encode(objDTO.getSenha()));
+		
 		validaPorCpfEEmail(objDTO);
 		oldObj = new Tecnico(objDTO);
 		return repository.save(oldObj);

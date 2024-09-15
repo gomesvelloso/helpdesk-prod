@@ -27,6 +27,11 @@ public class Tecnico extends Pessoa {
 		addPerfil(Perfil.CLIENTE);
 	}
 
+	public Tecnico(Integer id, String nome, String cpf, String email, String senha) {
+		super(id, nome, cpf, email, senha);
+		addPerfil(Perfil.CLIENTE);
+	}
+	
 	public Tecnico(TecnicoDTO obj) {
 		super();
 		this.id = obj.getId();
@@ -36,12 +41,6 @@ public class Tecnico extends Pessoa {
 		this.senha = obj.getSenha();
 		this.perfis = obj.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
 		this.dataCriacao = obj.getDataCriacao();
-		addPerfil(Perfil.CLIENTE);
-	}
-
-	public Tecnico(Integer id, String nome, String cpf, String email, String senha) {
-		super(id, nome, cpf, email, senha);
-		addPerfil(Perfil.CLIENTE);
 	}
 
 	public List<Chamado> getChamados() {
@@ -51,7 +50,5 @@ public class Tecnico extends Pessoa {
 	public void setChamados(List<Chamado> chamados) {
 		this.chamados = chamados;
 	}
-	
-	
 
 }
